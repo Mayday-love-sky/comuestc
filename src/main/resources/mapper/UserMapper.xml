@@ -6,7 +6,7 @@
     </sql>
 
 
-    <insert id="insert" parameterType="uestc.pojo.User">
+    <insert id="insertUser" parameterType="uestc.pojo.User">
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -16,6 +16,12 @@
             #{userAccount},#{userPassword},
         </trim>
     </insert>
+
+
+
+    <select id="hasUser" resultType="int" parameterType="uestc.pojo.User">
+        SELECT COUNT(*) FROM User WHERE userAccount=#{userAccount}
+    </select>
 
 
 </mapper>
