@@ -6,10 +6,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import uestc.pojo.User;
-import uestc.pojo.registerResponse;
+import uestc.pojo.Response.registerResponse;
 import uestc.serivice.UserService;
 
 import javax.validation.Valid;
@@ -24,9 +25,8 @@ public class UserController {
 
     @Autowired
     UserService userService;
-
     @PostMapping("/register")
-    public @ResponseBody registerResponse userRegister(@Valid User user, BindingResult result){
+    public @ResponseBody registerResponse userRegister(@RequestBody@Valid User user, BindingResult result){
         //控制层接受前端通过URL发出的请求
         //首先进行数据检验
         if(result.hasErrors()){

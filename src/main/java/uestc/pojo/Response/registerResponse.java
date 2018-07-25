@@ -1,4 +1,4 @@
-package uestc.pojo;
+package uestc.pojo.Response;
 
 
 public class registerResponse {

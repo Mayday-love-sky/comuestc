@@ -10,10 +10,10 @@
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            userAccount,userPassword
+            userAccount,userPassword,userCreateTime
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{userAccount},#{userPassword},
+            #{userAccount},#{userPassword},NOW()
         </trim>
     </insert>
 

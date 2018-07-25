@@ -1,7 +1,7 @@
 package uestc.serivice;
 
 import uestc.pojo.User;
-import uestc.pojo.registerResponse;
+import uestc.pojo.Response.registerResponse;
 
 //用户服务类接口
 public interface UserService {

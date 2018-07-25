@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uestc.dao.UserDao;
 import uestc.pojo.User;
-import uestc.pojo.registerResponse;
+import uestc.pojo.Response.registerResponse;
 
 
 @Service(value = "userService")
