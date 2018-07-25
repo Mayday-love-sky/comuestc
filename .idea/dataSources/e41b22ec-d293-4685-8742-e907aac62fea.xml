@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="uestcSchool@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="uestcSchool">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="BLOG"/>
+    <schema id="4" parent="1" name="employees_db"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="jantent"/>
+    <schema id="7" parent="1" name="LearningAndAsking"/>
+    <schema id="8" parent="1" name="maomao"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="smallapp"/>
+    <schema id="12" parent="1" name="SSP"/>
+    <schema id="13" parent="1" name="sys"/>
+    <schema id="14" parent="1" name="UESTC-Course"/>
+    <table id="15" parent="2" name="Activity"/>
+    <table id="16" parent="2" name="Group"/>
+    <table id="17" parent="2" name="User"/>
+    <column id="18" parent="15" name="actId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="15" name="actName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="15" name="actDescription">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="15" name="actOwner">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="15" name="actCreateTime">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="15" name="actGroupID">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="15" name="FK_activity_groupID">
+      <ColNames>actGroupID</ColNames>
+    </index>
+    <index id="25" parent="15" name="FK_activity_userID">
+      <ColNames>actOwner</ColNames>
+    </index>
+    <key id="26" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>actId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="15" name="FK_activity_userID">
+      <ColNames>actOwner</ColNames>
+      <RefSchemaName>uestcSchool</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>userID</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="28" parent="15" name="FK_activity_groupID">
+      <ColNames>actGroupID</ColNames>
+      <RefSchemaName>uestcSchool</RefSchemaName>
+      <RefTableName>Group</RefTableName>
+      <RefColNames>groupID</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="29" parent="16" name="groupID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="16" name="groupName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="16" name="groupOwner">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="16" name="groupType">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="16" name="groupDescripation">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="34" parent="16" name="groupCreateTime">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="16" name="FK_group_userID">
+      <ColNames>groupOwner</ColNames>
+    </index>
+    <key id="36" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>groupID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="16" name="FK_group_userID">
+      <ColNames>groupOwner</ColNames>
+      <RefSchemaName>uestcSchool</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>userID</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="38" parent="17" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="17" name="userAccount">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="17" name="userPhone">
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="41" parent="17" name="userEmail">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="42" parent="17" name="userPassword">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="17" name="userCreateTime">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="44" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
