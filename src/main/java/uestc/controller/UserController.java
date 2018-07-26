@@ -25,6 +25,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
     @PostMapping("/register")
     public @ResponseBody registerResponse userRegister(@RequestBody@Valid User user, BindingResult result){
         //控制层接受前端通过URL发出的请求
