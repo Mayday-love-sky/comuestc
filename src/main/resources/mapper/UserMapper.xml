@@ -17,10 +17,12 @@
         </trim>
     </insert>
 
-
-
     <select id="hasUser" resultType="int" parameterType="uestc.pojo.User">
         SELECT COUNT(*) FROM User WHERE userAccount=#{userAccount}
+    </select>
+
+    <select id="checkUser" resultType="int" parameterType="uestc.pojo.User">
+        SELECT COUNT(*) FROM User WHERE userAccount=#{userAccount} and userPassword=#{userPassword}
     </select>
 
 
