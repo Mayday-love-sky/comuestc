@@ -83,7 +83,7 @@ CREATE TABLE `UserInfo` (
 `userBirthday` timestamp(6) NULL,
 `userSex` varchar(255) NULL,
 `userSchool` varchar(255) NULL,
-`userEnterSchholTime` timestamp(6) NULL,
+`userEnterSchoolTime` timestamp(6) NULL,
 `userMajor` varchar(255) NULL,
 PRIMARY KEY (`UIuserID`) 
 );
