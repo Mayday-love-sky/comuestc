@@ -1,13 +1,11 @@
 package uestc.pojo;
 
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
 
 public class User {
 
     //数据库自动生成，用于标识用户，但不用户登录
     private int userID;
-
 
     private int userAccount;
 

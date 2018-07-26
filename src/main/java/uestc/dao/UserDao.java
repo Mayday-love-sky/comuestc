@@ -13,5 +13,8 @@ public interface UserDao {
 
     //删除用户
 
+    //确认用户身份
+    int checkUser(User user);
+
 
 }
